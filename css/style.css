@@ -1,1 +1,11 @@
-/* css created */
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700,900");
+
+* {
+  box-sizing: border-box; /* any width and height specified will include the borders */
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
