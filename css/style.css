@@ -11,8 +11,8 @@ body {
 }
 
 img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 .container {
@@ -62,9 +62,9 @@ img {
 ======================================= */
 
 header {
-  position: absolute;
-  margin-top: 1em;
   left: 0;
+  margin: 1.2em;
+  position: absolute;
   right: 0;
 }
 
@@ -99,9 +99,51 @@ nav a:focus {
 
 .home-hero {
   background-image: url(../img/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
   padding: 10em 0em;
   color: #fff;
 }
 
-/* home-hero
-======================================= */
+/*
+*
+*
+*
+========================================
+=============== queries ================
+========================================
+*
+*/
+
+@media (min-width: 60em) {
+  /* typography
+  ======================================= */
+
+  .title {
+    font-size: 3.7em;
+  }
+
+  /* buttons
+  ======================================= */
+  .button {
+    font-size: 1.5rem;
+  }
+
+  /* header
+  ======================================= */
+
+  .logo {
+    float: left;
+  }
+
+  nav {
+    float: right;
+  }
+
+  /* home-hero
+  ======================================= */
+  .home-hero {
+    height: 100vh;
+    padding-top: 30vh;
+  }
+}
