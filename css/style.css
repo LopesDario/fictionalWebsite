@@ -16,16 +16,34 @@ img {
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 70em;
   width: 95%;
-  margin: 0;
 }
 
 /* typography
 ======================================= */
 
+h1 {
+  font-weight: 300;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+p {
+  line-height: 1.45;
+  margin-top: 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
 .title {
   font-size: 2.5rem;
+  font-weight: 900;
   margin-bottom: 1.5em;
+  margin-top: 1em;
 }
 
 .title span {
@@ -50,6 +68,11 @@ img {
 .button-accent {
   color: #00ff6c;
   border-color: #00ff6c;
+}
+
+.button-small {
+  font-size: 0.7em;
+  font-weight: 700;
 }
 
 .button-accent:hover,
@@ -105,6 +128,29 @@ nav a:focus {
   color: #fff;
 }
 
+/* home-about
+======================================= */
+.home-about-textbox {
+  background-color: #232323;
+  color: #eee;
+  margin-left: -2.5%; /* because container has 95% width */
+  outline: 2px solid #00ff6c;
+  outline-offset: -2.5em;
+  padding: 4em;
+  position: relative;
+  width: 100vw;
+}
+
+.home-about-textbox h1 {
+  background-color: #232323;
+  color: #00ff6c;
+  padding: 0 0.145em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.7em;
+}
+
 /*
 *
 *
@@ -115,9 +161,28 @@ nav a:focus {
 *
 */
 
+@media (min-width: 25rem) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .home-about-textbox h1 {
+    padding: 0 0.33em;
+    top: 0.6em;
+  }
+}
+
 @media (min-width: 60em) {
   /* typography
   ======================================= */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
 
   .title {
     font-size: 3.7em;
@@ -145,5 +210,29 @@ nav a:focus {
   .home-hero {
     height: 100vh;
     padding-top: 30vh;
+  }
+
+  /* home-about
+  ======================================= */
+  .home-about {
+    background-image: url(../img/who-we-are.jpg);
+    background-repeat: no-repeat;
+    padding-bottom: 10em;
+  }
+
+  .home-about-textbox {
+    box-shadow: 0 0 4em 0 rgba(0, 0, 0, 0.4);
+    margin-left: -2.5%; /* because container has 95% width */
+    outline-offset: -3.5em;
+    padding: 6.5em;
+    text-align: left;
+    top: -7em;
+    width: 45%;
+  }
+
+  .home-about-textbox h1 {
+    left: 5.5rem;
+    top: 0.7em;
+    transform: translateX(0);
   }
 }
