@@ -30,6 +30,15 @@ h1 {
   margin: 0;
 }
 
+p {
+  line-height: 1.45;
+  margin-top: 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
 .title {
   font-size: 2.5rem;
   font-weight: 900;
@@ -59,6 +68,11 @@ h1 {
 .button-accent {
   color: #00ff6c;
   border-color: #00ff6c;
+}
+
+.button-small {
+  font-size: 0.7em;
+  font-weight: 700;
 }
 
 .button-accent:hover,
@@ -165,6 +179,11 @@ nav a:focus {
     font-size: 2.5rem;
   }
 
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
   .title {
     font-size: 3.7em;
   }
@@ -195,9 +214,25 @@ nav a:focus {
 
   /* home-about
   ======================================= */
+  .home-about {
+    background-image: url(../img/who-we-are.jpg);
+    background-repeat: no-repeat;
+    padding-bottom: 10em;
+  }
+
+  .home-about-textbox {
+    box-shadow: 0 0 4em 0 rgba(0, 0, 0, 0.4);
+    margin-left: -2.5%; /* because container has 95% width */
+    outline-offset: -3.5em;
+    padding: 6.5em;
+    text-align: left;
+    top: -7em;
+    width: 45%;
+  }
 
   .home-about-textbox h1 {
-    padding: 0 0.6em;
-    top: 0.3em;
+    left: 5.5rem;
+    top: 0.7em;
+    transform: translateX(0);
   }
 }
