@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box; /* any width and height specified will include the borders */
+  /*transition: all ease-in-out 250ms; */ /* this could replace the transitions in .port-desc*/
 }
 
 body {
@@ -71,7 +72,7 @@ p:last-of-type {
 }
 
 .button-small {
-  font-size: 0.7em;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 
@@ -151,6 +152,45 @@ nav a:focus {
   top: 0.7em;
 }
 
+/* portfolio
+======================================= */
+figure {
+  margin: 0;
+}
+
+.portfolio {
+  margin: 3em 0;
+}
+
+.port-item {
+  margin: 0;
+  position: relative;
+}
+
+.port-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.port-desc {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0em;
+  color: #ddd;
+  left: 0;
+  padding-bottom: 1em;
+  position: absolute;
+  right: 0;
+}
+
+.port-desc p {
+  margin: 0.7em;
+}
+
+.sub-title {
+  padding-bottom: 1.5em;
+}
+
 /*
 *
 *
@@ -172,7 +212,14 @@ nav a:focus {
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 38rem) {
+  .port-item {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media (min-width: 60rem) {
   /* typography
   ======================================= */
   h1 {
@@ -185,7 +232,7 @@ nav a:focus {
   }
 
   .title {
-    font-size: 3.7em;
+    font-size: 3.7rem;
   }
 
   /* buttons
@@ -217,7 +264,7 @@ nav a:focus {
   .home-about {
     background-image: url(../img/who-we-are.jpg);
     background-repeat: no-repeat;
-    padding-bottom: 10em;
+    /*padding-bottom: 10em;*/
   }
 
   .home-about-textbox {
@@ -234,5 +281,26 @@ nav a:focus {
     left: 5.5rem;
     top: 0.7em;
     transform: translateX(0);
+  }
+
+  /* portfolio
+  ======================================= */
+  .port-item {
+    width: 33.3333334%;
+    overflow: hidden;
+  }
+
+  .port-item .button {
+    font-size: 1rem;
+  }
+
+  .port-desc {
+    transform: translateY(120%);
+    transition-duration: 0.25s;
+  }
+
+  .port-item:hover .port-desc {
+    transform: translateY(0%);
+    transition-duration: 0.4s;
   }
 }
