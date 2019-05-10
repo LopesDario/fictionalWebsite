@@ -22,7 +22,41 @@ img {
   width: 95%;
 }
 
-/* typography
+.clearfix::after,
+section::after,
+footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*
+*
+*
+*
+*
+* Column System
+======================================= */
+[class^="col-"] {
+  width: 100%;
+  margin-top: 1em;
+}
+
+[class^="col-"]:first-child {
+  margin-top: 0;
+}
+
+.col-1 {
+  float: left;
+  width: 33.333333%;
+}
+
+/*
+*
+*
+*
+*
+* Typography
 ======================================= */
 
 h1 {
@@ -53,7 +87,22 @@ p:last-of-type {
   font-weight: 300;
 }
 
-/* buttons
+.title-cta {
+  margin: 0 0 0.5em;
+}
+
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+*
+*
+*
+*
+* Buttons
 ======================================= */
 
 .button {
@@ -82,7 +131,23 @@ p:last-of-type {
   color: #232323;
 }
 
-/* header
+.button-dark {
+  color: #232323;
+}
+
+.button-dark:hover,
+.button-dark:focus {
+  background: #232323;
+  border-color: #232323;
+  color: #00ff6c;
+}
+
+/*
+*
+*
+*
+*
+* Header
 ======================================= */
 
 header {
@@ -118,7 +183,12 @@ nav a:focus {
   color: #ddd;
 }
 
-/* home-hero
+/*
+*
+*
+*
+*
+* Home-hero
 ======================================= */
 
 .home-hero {
@@ -129,7 +199,12 @@ nav a:focus {
   color: #fff;
 }
 
-/* home-about
+/*
+*
+*
+*
+*
+* Home-about
 ======================================= */
 .home-about-textbox {
   background-color: #232323;
@@ -152,14 +227,19 @@ nav a:focus {
   top: 0.7em;
 }
 
-/* portfolio
+/*
+*
+*
+*
+*
+* portfolio
 ======================================= */
 figure {
   margin: 0;
 }
 
 .portfolio {
-  margin: 3em 0;
+  margin-top: 3em;
 }
 
 .port-item {
@@ -174,7 +254,7 @@ figure {
 }
 
 .port-desc {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   bottom: 0em;
   color: #ddd;
   left: 0;
@@ -195,6 +275,34 @@ figure {
 *
 *
 *
+*
+* CTA
+======================================= */
+.cta {
+  background-color: #00ff6c;
+  padding: 5em 0;
+}
+
+/*
+*
+*
+*
+*
+* Footer
+======================================= */
+footer {
+  background-color: #232323;
+  color: #ddd;
+  padding: 4.5em 0;
+  text-align: left;
+}
+
+/*
+*
+*
+*
+*
+* 
 ========================================
 =============== queries ================
 ========================================
@@ -216,6 +324,30 @@ figure {
   .port-item {
     float: left;
     width: 50%;
+  }
+
+  /* Column System
+  ======================================= */
+  [class^="col-"] {
+    float: left;
+    padding: 0 0.5em;
+    margin-top: 0;
+  }
+
+  [class^="col-"]:first-child {
+    padding-left: 0;
+  }
+
+  [class^="col-"]:last-child {
+    padding-right: 0;
+  }
+
+  .col-3 {
+    width: 50%;
+  }
+
+  .col-1 {
+    width: 16.666667%;
   }
 }
 
