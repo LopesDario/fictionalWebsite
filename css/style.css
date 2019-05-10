@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box; /* any width and height specified will include the borders */
+  /*transition: all ease-in-out 250ms; */ /* this could replace the transitions in .port-desc*/
 }
 
 body {
@@ -16,16 +17,68 @@ img {
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 70em;
   width: 95%;
+}
+
+.clearfix::after,
+section::after,
+footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*
+*
+*
+*
+*
+* Column System
+======================================= */
+[class^="col-"] {
+  width: 100%;
+  margin-top: 1em;
+}
+
+[class^="col-"]:first-child {
+  margin-top: 0;
+}
+
+.col-1 {
+  float: left;
+  width: 33.333333%;
+}
+
+/*
+*
+*
+*
+*
+* Typography
+======================================= */
+
+h1 {
+  font-weight: 300;
+  font-size: 1.7rem;
   margin: 0;
 }
 
-/* typography
-======================================= */
+p {
+  line-height: 1.45;
+  margin-top: 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
 
 .title {
   font-size: 2.5rem;
+  font-weight: 900;
   margin-bottom: 1.5em;
+  margin-top: 1em;
 }
 
 .title span {
@@ -34,7 +87,22 @@ img {
   font-weight: 300;
 }
 
-/* buttons
+.title-cta {
+  margin: 0 0 0.5em;
+}
+
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+*
+*
+*
+*
+* Buttons
 ======================================= */
 
 .button {
@@ -52,13 +120,34 @@ img {
   border-color: #00ff6c;
 }
 
+.button-small {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
 .button-accent:hover,
 .button-accent:focus {
   background: #00ff6c;
   color: #232323;
 }
 
-/* header
+.button-dark {
+  color: #232323;
+}
+
+.button-dark:hover,
+.button-dark:focus {
+  background: #232323;
+  border-color: #232323;
+  color: #00ff6c;
+}
+
+/*
+*
+*
+*
+*
+* Header
 ======================================= */
 
 header {
@@ -94,7 +183,12 @@ nav a:focus {
   color: #ddd;
 }
 
-/* home-hero
+/*
+*
+*
+*
+*
+* Home-hero
 ======================================= */
 
 .home-hero {
@@ -109,18 +203,168 @@ nav a:focus {
 *
 *
 *
+*
+* Home-about
+======================================= */
+.home-about-textbox {
+  background-color: #232323;
+  color: #eee;
+  margin-left: -2.5%; /* because container has 95% width */
+  outline: 2px solid #00ff6c;
+  outline-offset: -2.5em;
+  padding: 4em;
+  position: relative;
+  width: 100vw;
+}
+
+.home-about-textbox h1 {
+  background-color: #232323;
+  color: #00ff6c;
+  padding: 0 0.145em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.7em;
+}
+
+/*
+*
+*
+*
+*
+* portfolio
+======================================= */
+figure {
+  margin: 0;
+}
+
+.portfolio {
+  margin-top: 3em;
+}
+
+.port-item {
+  margin: 0;
+  position: relative;
+}
+
+.port-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.port-desc {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0em;
+  color: #ddd;
+  left: 0;
+  padding-bottom: 1em;
+  position: absolute;
+  right: 0;
+}
+
+.port-desc p {
+  margin: 0.7em;
+}
+
+.sub-title {
+  padding-bottom: 1.5em;
+}
+
+/*
+*
+*
+*
+*
+* CTA
+======================================= */
+.cta {
+  background-color: #00ff6c;
+  padding: 5em 0;
+}
+
+/*
+*
+*
+*
+*
+* Footer
+======================================= */
+footer {
+  background-color: #232323;
+  color: #ddd;
+  padding: 4.5em 0;
+  text-align: left;
+}
+
+/*
+*
+*
+*
+*
+* 
 ========================================
 =============== queries ================
 ========================================
 *
 */
 
-@media (min-width: 60em) {
+@media (min-width: 25rem) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .home-about-textbox h1 {
+    padding: 0 0.33em;
+    top: 0.6em;
+  }
+}
+
+@media (min-width: 38rem) {
+  .port-item {
+    float: left;
+    width: 50%;
+  }
+
+  /* Column System
+  ======================================= */
+  [class^="col-"] {
+    float: left;
+    padding: 0 0.5em;
+    margin-top: 0;
+  }
+
+  [class^="col-"]:first-child {
+    padding-left: 0;
+  }
+
+  [class^="col-"]:last-child {
+    padding-right: 0;
+  }
+
+  .col-3 {
+    width: 50%;
+  }
+
+  .col-1 {
+    width: 16.666667%;
+  }
+}
+
+@media (min-width: 60rem) {
   /* typography
   ======================================= */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
 
   .title {
-    font-size: 3.7em;
+    font-size: 3.7rem;
   }
 
   /* buttons
@@ -145,5 +389,50 @@ nav a:focus {
   .home-hero {
     height: 100vh;
     padding-top: 30vh;
+  }
+
+  /* home-about
+  ======================================= */
+  .home-about {
+    background-image: url(../img/who-we-are.jpg);
+    background-repeat: no-repeat;
+    /*padding-bottom: 10em;*/
+  }
+
+  .home-about-textbox {
+    box-shadow: 0 0 4em 0 rgba(0, 0, 0, 0.4);
+    margin-left: -2.5%; /* because container has 95% width */
+    outline-offset: -3.5em;
+    padding: 6.5em;
+    text-align: left;
+    top: -7em;
+    width: 45%;
+  }
+
+  .home-about-textbox h1 {
+    left: 5.5rem;
+    top: 0.7em;
+    transform: translateX(0);
+  }
+
+  /* portfolio
+  ======================================= */
+  .port-item {
+    width: 33.3333334%;
+    overflow: hidden;
+  }
+
+  .port-item .button {
+    font-size: 1rem;
+  }
+
+  .port-desc {
+    transform: translateY(120%);
+    transition-duration: 0.25s;
+  }
+
+  .port-item:hover .port-desc {
+    transform: translateY(0%);
+    transition-duration: 0.4s;
   }
 }
